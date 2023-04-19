@@ -1,0 +1,85 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Surveillance Camera Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #f1f1f1;
+			font-family: Arial, sans-serif;
+		}
+
+		header {
+			background-color: #333;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 24px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+		.container {
+			max-width: 1000px;
+			margin: 0 auto;
+			padding: 20px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.camera {
+			background-color: #fff;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+			border-radius: 5px;
+			margin-bottom: 20px;
+			overflow: hidden;
+			width: 640px;
+			length: 640px;
+			text-align: center;
+		}
+
+		.camera img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.camera h2 {
+			margin: 0;
+			padding: 10px;
+			font-size: 18px;
+			font-weight: bold;
+			color: #333;
+			background-color: #f1f1f1;
+			text-transform: uppercase;
+		}
+
+		@media screen and (max-width: 767px) {
+			.camera {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>Surveillance Camera Page</header>
+
+	<div class="container">
+		<div class="camera">
+			<img class="bg" src="{{ url_for('video_feed') }}">
+			<h2>Camera 1</h2>
+		</div>
+		<div class="camera">
+			<img src="https://via.placeholder.com/640x640" alt="Camera 2">
+			<h2>Camera 2</h2>
+		</div>
+
+	</div>
+</body>
+</html>
