@@ -31,7 +31,13 @@ class VideoCamera(object):
             if 'fire' in labels.values:
                 print('Fire detected!')
                 cord_thres = results.xyxyn[0][:, -1].numpy(), results.xyxyn[0][:, :-1].numpy()
-                print(cord_thres)
+                labels, cord_thres = results.xyxyn[0][:, -1].numpy(), results.xyxyn[0][:, :-1].numpy()
+                x = cord_thres[:, 0]
+                y = cord_thres[:, 1]
+                w = cord_thres[:, 2]
+                h = cord_thres[:, 3]
+                print(x,y,w,h)
+         
                 # Save the image
                 cv2.imwrite('fire_detected.jpg', cv2.cvtColor(a, cv2.COLOR_RGB2BGR))
                 
