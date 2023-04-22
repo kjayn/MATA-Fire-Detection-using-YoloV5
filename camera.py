@@ -30,8 +30,11 @@ class VideoCamera(object):
             labels = results.pandas().xyxy[0]['name']
             if 'fire' in labels.values:
                 print('Fire detected!')
+                cord_thres = results.xyxyn[0][:, -1].numpy(), results.xyxyn[0][:, :-1].numpy()
+                print(cord_thres)
                 # Save the image
                 cv2.imwrite('fire_detected.jpg', cv2.cvtColor(a, cv2.COLOR_RGB2BGR))
+                
                 now = datetime.datetime.now()
                 message = f'Fire detected at {now.strftime("%Y-%m-%d %H:%M:%S")}'
                 # Send the image via Telegram
