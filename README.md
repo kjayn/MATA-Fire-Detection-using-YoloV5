@@ -17,7 +17,7 @@ This project implements a real-time fire detection system using the YOLOv5 objec
 
 ### Usage
 1. Start the flask application
-[python app.py](url)
+and run [python main.py](main.py)
 
 2. Open your web browser and navigate to http://localhost:5000.
 3. Upload an image or video file containing fire scenes.
