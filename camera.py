@@ -4,6 +4,9 @@ import numpy as np
 from playsound import playsound
 import pygame
 
+#if you dont have a yolov5 folder use this line (need internet to use this):
+#model = torch.hub.load('ultralytics/yolov5', 'custom','best.pt', force_reload=True)
+
 model = torch.hub.load(r"C:\Users\Bob\Downloads\yolov5\content\yolov5", 'custom', path="best.pt", source='local') #paste the folder of yolov5 in the first double qoutation
 model.conf = 0.6
 model.classes = 0
